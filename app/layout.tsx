@@ -9,12 +9,11 @@ export const metadata: Metadata = {
   description: "AI agent CLI",
 };
 
-const poppins  = Poppins({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-poppins",
-
-})
+});
 
 export default function RootLayout({
   children,
@@ -22,17 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${poppins.variable} ${poppins.className} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning className="dark">
+      <body className={`${poppins.variable} ${poppins.className} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster/>
+          <Toaster />
           {children}
         </ThemeProvider>
       </body>
